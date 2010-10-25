@@ -1,0 +1,6 @@
+RewriteEngine On
+AddDefaultCharset UTF-8
+
+# directories we want to leave alone
+RewriteRule ^(.*)/m cards.php?slug=$1&m=true [L]
+RewriteRule ^(.*)/ cards.php?slug=$1 [L]
