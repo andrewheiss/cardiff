@@ -1,0 +1,30 @@
+body							{ background: #333; margin: 0; padding: 0; }
+
+/* Basic setup */
+
+header							{ height: 35px; background: #000; color: #fff; }
+#status							{ width: 800px; margin: 0px auto; padding-top: 7px; font-family: "Lucida Grande", Helvetica, Arial, sans-serif; font-size: 12px; }
+
+#counter						{ float: right; }
+
+.card							{ width: 600px; margin: 45px auto; }
+.side1, .side2					{ width: 600px; height: 300px; position: absolute; font-family: "Lucida Grande", Helvetica, Arial, sans-serif; padding: 30px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; font-size: 30px; }
+	
+.side1							{ background: #fff; color: #000; -webkit-box-shadow: 5px 5px 5px #111; -moz-box-shadow: 5px 5px 5px #111; box-shadow: 5px 5px 5px #111; display: table; }
+
+.side2							{ background: #444; color: #fff; -webkit-box-shadow: 5px 5px 5px #222; -moz-box-shadow: 5px 5px 5px #222; box-shadow: 5px 5px 5px #222; display: table; }
+
+/* Typography */
+.word							{ font-weight: bold; text-align: center; padding-top: 0px; }
+.para							{ }
+.content						{ display: table-cell; vertical-align: middle; }
+.para .content					{ margin: 0px auto; font-size: 12px; line-height: 1.5em; }
+
+/* 3D stuff */
+
+.card .side1, .card .side2		{ -webkit-perspective: 500; -webkit-transform: rotateX(0deg); -webkit-transform-style: preserve-3d; }
+.card .side2					{ -webkit-transform: rotateX(90deg); }
+
+.slideright						{ -webkit-transform: translate3d(1000px, 0px, -50px) !important; -webkit-transition: all 1s linear !important; }
+.slidehome						{ -webkit-transform: translate3d(0px, 0px, 0px) !important; -webkit-transition: all 1s linear !important; }
+.slideleft						{ -webkit-transform: translate3d(-1000px, 0px, -50px) !important; -webkit-transition: all 1s linear !important; }

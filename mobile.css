@@ -1,0 +1,2 @@
+.card							{ position: absolute; width: inherit; margin: auto; }
+.side1, .side2					{ position: absolute; width: inherit; height: inherit; margin: 15px; font-size: inherit; }
