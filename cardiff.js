@@ -96,16 +96,31 @@ function slideCard(dir) {
 function captureKeys() {
 	document.addEventListener('keydown', function(e) {
 		switch(e.keyCode) {
-			case 37: // left
+			case 37: // left arrow
 				slideCard("prev");
 				break;
-			case 38: // up
+			case 72: // 'h'
+				slideCard("prev");
+				break;
+
+			case 38: // up arrow
 				flipCard();
 				break;
-			case 39: // right
+			case 75: // 'k'
+				flipCard();
+				break;
+
+			case 39: // right arrow
 				slideCard("next");
 				break;
-			case 40: // down
+			case 76: // 'l'
+				slideCard("next");
+				break;
+
+			case 40: // down arrow
+				flipCard();
+				break;
+			case 74: // 'j'
 				flipCard();
 				break;
 		};
