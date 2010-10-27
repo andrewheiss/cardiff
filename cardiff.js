@@ -132,6 +132,52 @@ $(document).ready(function() {
 	$('.card').each(function() {
 		card_id = $(this).attr("id");
 
+		// resize the text on each side
+		$(this).children().each(function() {
+			// get content object
+			var content = $(this).children(".content");
+
+			var card_width = $(this).width();
+			var ideal_width = card_width * 0.40;	// we want the text to take up 40% of the width
+
+			var string_length = $(this).html().length;
+			var font_size = (1 / string_length) * 1400;	// rough guess
+
+			// create div for measuring string length
+			var div = document.createElement('div');
+			document.body.appendChild(div);
+			$(div).css({ position: 'absolute', left: -1000, top: -1000, display: 'none' });
+			$(div).html($(this).html());
+			
+			// set initial size
+			$(div).css("font-size", font_size + "px");
+			div_width = $(div).outerWidth();
+
+			if (div_width < ideal_width) {
+				difference = ideal_width - div_width;
+				font_size += difference / 6;
+			} else if (div_width < ideal_width) {
+				difference = div_width - ideal_width;
+				font_size -= difference / 6;
+			}
+
+			// get rid of the placeholder
+			$(div).remove();
+
+			if (font_size > 40) { font_size = 40; }
+			if (font_size < 12) { font_size = 12; }
+
+			// resize the text
+			content.css("font-size", font_size + "px");
+
+			/*
+			// also reposition the text
+			var new_ypos = (WINDOW_HEIGHT / 2) - content.height();
+			content.css("position", "relative");
+			content.css("top", new_ypos + "px");
+			*/
+		});
+
 		// hide each card
 		$(this).hide();
 	});

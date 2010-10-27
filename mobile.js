@@ -25,18 +25,52 @@ function resizeViewport() {
 			// get content object
 			var content = $(this).children(".content");
 
-			if ($(this).is('.word')) {
-				// words
-				
-				// figure out how much available space we have (WINDOW_WIDTH - TEXT_MARGIN)
-				var available = WINDOW_WIDTH - TEXT_MARGIN;
-				var card_width = $(this.obj).width();
-				var new_size = available - card_width;
-				if (new_size > 34) new_size = 34;
+			var card_width = $(this.obj).width();
+			var ideal_width = card_width * 0.70;	// we want the text to take up 70% of the width
 
-				// resize the text
-				content.css("font-size", new_size + "px");
+			var string_length = $(this).html().length;
+			var font_size = (1 / string_length) * 160;	// rough guess
+
+			// create div for measuring string length
+			var div = document.createElement('div');
+			document.body.appendChild(div);
+			$(div).css({ position: 'absolute', left: -1000, top: -1000, display: 'none' });
+			$(div).html($(this).html());
+			
+			// set initial size
+			$(div).css("font-size", font_size + "px");
+			div_width = $(div).outerWidth();
+
+			// get into the ballpark
+			while (div_width < ideal_width) {
+				font_size += 5;
+				$(div).css("font-size", font_size + "px");
+				div_width = $(div).outerWidth();
 			}
+			while (div_width > ideal_width) {
+				font_size -= 5;
+				$(div).css("font-size", font_size + "px");
+				div_width = $(div).outerWidth();
+			}
+
+			// fine tune the result
+			while (div_width < ideal_width) {
+				font_size += 1;
+				$(div).css("font-size", font_size + "px");
+				div_width = $(div).outerWidth();
+			}
+			while (div_width > ideal_width) {
+				font_size -= 1;
+				$(div).css("font-size", font_size + "px");
+				div_width = $(div).outerWidth();
+			}
+
+			// get rid of the placeholder
+			$(div).remove();
+
+			// resize the text
+			content.css("font-size", font_size + "px");
+
 
 			// also reposition the text
 /*			var new_ypos = (WINDOW_HEIGHT / 2) - content.height();
