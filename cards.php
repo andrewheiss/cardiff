@@ -23,9 +23,9 @@ $count = 1;
 while (!feof($input)) {
 	$line = fgets($input);
 
-	if ($count == 1) { $title = trim($line); }		// first line is title
-
-	if ($count > 3) {								// ignore slug and blank line
+	if ($count == 1) {
+		$title = trim($line);				// first line is title
+	} else if ($line != "") {
 		$card = explode("|", $line);
 		$side1 = trim($card[0]);
 		$side2 = trim($card[1]);
