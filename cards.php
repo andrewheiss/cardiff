@@ -1,5 +1,8 @@
 <?php
 
+include_once('lib/markdown.php');
+include_once('lib/smartypants.php');
+
 class Card {
 	public $side1;
 	public $side2;
@@ -25,10 +28,10 @@ while (!feof($input)) {
 
 	if ($count == 1) {
 		$title = trim($line);				// first line is title
-	} else if ($line != "") {
+	} else if (trim($line) != "") {
 		$card = explode("|", $line);
-		$side1 = trim($card[0]);
-		$side2 = trim($card[1]);
+		$side1 = SmartyPants(Markdown(trim($card[0])));
+		$side2 = SmartyPants(Markdown(trim($card[1])));
 
 		if ($side1 && side2) {
 			$newCard = new Card($side1, $side2);
