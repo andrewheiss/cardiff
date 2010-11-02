@@ -2,6 +2,8 @@
 
 A web-based flash card engine. Runs on PHP, Javascript, HTML5, and CSS 3.
 
+It works in Chrome and Safari.
+
 ### Demo
 
 * [http://bencrowder.net/sandbox/cardiff/sample/](http://bencrowder.net/sandbox/cardiff/sample/)
