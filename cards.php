@@ -89,6 +89,7 @@ if (strpos($filename, dirname(__FILE__)) === 0 && file_exists($filename)) {
 	}
 
 	$card_id = 1;
+	shuffle($cards);
 	foreach ($cards as $card) { ?>
 	<article id="<?php echo $card_id; ?>" class="card">
 		<section class="side1 word<?php if ($card_id == 1) echo " active"; ?>">
