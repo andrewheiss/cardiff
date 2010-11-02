@@ -2,6 +2,11 @@
 
 A web-based flash card engine. Runs on PHP, Javascript, HTML5, and CSS 3.
 
+### Demo
+
+* [http://bencrowder.net/sandbox/cardiff/sample/](http://bencrowder.net/sandbox/cardiff/sample/)
+* [http://bencrowder.net/sandbox/cardiff/sample/m](http://bencrowder.net/sandbox/cardiff/sample/m) (mobile)
+
 ### Installation
 
 1. Put the files in a directory (don't forget .htaccess).
@@ -25,7 +30,7 @@ For example:
 	moneo, monere | to warn
 	lego, legere | to read
 
-The filename is the slug. For example, `latin-vocab-1.text` becomes `http://yoururl.com/cards/latin-vocab-1`
+The filename is the slug. For example, `latin-vocab-1.text` becomes `http://yoururl.com/cards/latin-vocab-1` (assuming you've put Cardiff in the directory for `http://yoururl.com/cards`).
 
 ### Keyboard shortcuts
 
