@@ -15,8 +15,8 @@ class Card {
 
 $cards = array();
 
-$slug = $_GET["slug"];			// slug for card deck
-$mobile = $_GET["m"];			// mobile flag
+$slug = $_GET["slug"];			// slug for card deck			
+$mobile = (array_key_exists('m', $_GET)) ? $_GET['m']: ""; // mobile flag
 
 // Get the real file path for the card deck
 
