@@ -4,7 +4,7 @@ AddDefaultCharset UTF-8
 # directories we want to leave alone
 RewriteRule ^(images)(/.*)?$ - [L]
 
-RewriteRule ^(.*)/m/random cards.php?slug=$1&m=true&random=true [L]
+RewriteRule ^(.*)/m/shuffle cards.php?slug=$1&m=true&shuffle=true [L]
 RewriteRule ^(.*)/m cards.php?slug=$1&m=true [L]
-RewriteRule ^(.*)/random cards.php?slug=$1&random=true [L]
+RewriteRule ^(.*)/shuffle cards.php?slug=$1&shuffle=true [L]
 RewriteRule ^(.*)/ cards.php?slug=$1 [L]

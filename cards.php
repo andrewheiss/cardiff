@@ -3,7 +3,7 @@
 include_once('lib/markdown.php');
 include_once('lib/smartypants.php');
 
-$siteroot = "http://cardiff"; // No trailing slash…
+include_once('config.php');
 
 class Card {
 	public $side1;
@@ -19,7 +19,7 @@ $cards = array();
 
 $slug = $_GET["slug"];			// slug for card deck			
 $mobile = (array_key_exists('m', $_GET)) ? $_GET['m']: ""; // mobile flag
-$random = (array_key_exists('random', $_GET)) ? $_GET['random']: ""; // random flag
+$shuffle = (array_key_exists('shuffle', $_GET)) ? $_GET['shuffle']: ""; // shuffle flag
 
 // Get the real file path for the card deck
 
@@ -54,10 +54,10 @@ if (strpos($filename, dirname(__FILE__)) === 0 && file_exists($filename)) {
 	}
 }
 
-if ($random) {
-	$random_button = "<a id=\"random-button\" href=\"$siteroot/$slug/\" title=\"View deck sequentially\"><img /><img src=\"$siteroot/images/shuffle_on.png\" alt=\"View deck sequentially\" /></a>";
+if ($shuffle) {
+	$shuffle_button = "<a id=\"shuffle-button\" href=\"$siteroot/$slug/\" title=\"View deck sequentially\"><img /><img src=\"$siteroot/images/shuffle_on.png\" alt=\"View deck sequentially\" /></a>";
 } else {
-	$random_button = "<a id=\"random-button\" href=\"$siteroot/$slug/random\" title=\"Shuffle the deck\"><img /><img src=\"$siteroot/images/shuffle_off.png\" alt=\"Shuffle the deck\" /></a>";
+	$shuffle_button = "<a id=\"shuffle-button\" href=\"$siteroot/$slug/shuffle\" title=\"Shuffle the deck\"><img /><img src=\"$siteroot/images/shuffle_off.png\" alt=\"Shuffle the deck\" /></a>";
 }
 
 ?>
@@ -93,13 +93,13 @@ if ($random) {
 </head>
 <body>
 	<?php if (!$mobile) { ?>
-	<header><div id="status"><span id="decktitle"><?php echo $title; ?></span><?php echo $random_button; ?><span id="counter">#<span id="current_card">1</span> of <?php echo count($cards); ?></span></div></header>
+	<header><div id="status"><span id="decktitle"><?php echo $title; ?></span><?php echo $shuffle_button; ?><span id="counter">#<span id="current_card">1</span> of <?php echo count($cards); ?></span></div></header>
 	<?php
 	}
 
 	$card_id = 1;
 	
-	if ($random) {
+	if ($shuffle) {
 		shuffle($cards);
 	}
 	
