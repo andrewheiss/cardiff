@@ -3,6 +3,8 @@
 include_once('lib/markdown.php');
 include_once('lib/smartypants.php');
 
+$siteroot = "http://cardiff"; // No trailing slash…
+
 class Card {
 	public $side1;
 	public $side2;
@@ -17,6 +19,7 @@ $cards = array();
 
 $slug = $_GET["slug"];			// slug for card deck			
 $mobile = (array_key_exists('m', $_GET)) ? $_GET['m']: ""; // mobile flag
+$random = (array_key_exists('random', $_GET)) ? $_GET['random']: ""; // random flag
 
 // Get the real file path for the card deck
 
@@ -49,6 +52,12 @@ if (strpos($filename, dirname(__FILE__)) === 0 && file_exists($filename)) {
 		}
 		$count++;
 	}
+}
+
+if ($random) {
+	$random_button = "<a id=\"random-button\" href=\"$siteroot/$slug/\" title=\"View deck sequentially\"><img /><img src=\"$siteroot/images/shuffle_on.png\" alt=\"View deck sequentially\" /></a>";
+} else {
+	$random_button = "<a id=\"random-button\" href=\"$siteroot/$slug/random\" title=\"Shuffle the deck\"><img /><img src=\"$siteroot/images/shuffle_off.png\" alt=\"Shuffle the deck\" /></a>";
 }
 
 ?>
@@ -84,12 +93,16 @@ if (strpos($filename, dirname(__FILE__)) === 0 && file_exists($filename)) {
 </head>
 <body>
 	<?php if (!$mobile) { ?>
-	<header><div id="status"><span id="decktitle"><?php echo $title; ?></span><span id="counter">#<span id="current_card">1</span> of <?php echo count($cards); ?></span></div></header>
+	<header><div id="status"><span id="decktitle"><?php echo $title; ?></span><?php echo $random_button; ?><span id="counter">#<span id="current_card">1</span> of <?php echo count($cards); ?></span></div></header>
 	<?php
 	}
 
 	$card_id = 1;
-	shuffle($cards);
+	
+	if ($random) {
+		shuffle($cards);
+	}
+	
 	foreach ($cards as $card) { ?>
 	<article id="<?php echo $card_id; ?>" class="card">
 		<section class="side1 word<?php if ($card_id == 1) echo " active"; ?>">
