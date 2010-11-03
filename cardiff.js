@@ -92,6 +92,11 @@ function slideCard(dir) {
 	}
 }
 
+// Toggle shuffle
+function toggleShuffle() {
+	window.location = $('#shuffle-button').attr('href');
+}
+
 // Catch keystrokes
 function captureKeys() {
 	document.addEventListener('keydown', function(e) {
@@ -122,6 +127,10 @@ function captureKeys() {
 				break;
 			case 74: // 'j'
 				flipCard();
+				break;
+				
+			case 83: // 's'
+				toggleShuffle();
 				break;
 		};
 	}, false);
