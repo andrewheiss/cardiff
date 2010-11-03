@@ -184,13 +184,6 @@ $(document).ready(function() {
 
 			// resize the text
 			content.css("font-size", font_size + "px");
-
-			/*
-			// also reposition the text
-			var new_ypos = (WINDOW_HEIGHT / 2) - content.height();
-			content.css("position", "relative");
-			content.css("top", new_ypos + "px");
-			*/
 		});
 
 		// hide each card
