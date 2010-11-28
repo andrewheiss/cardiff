@@ -90,6 +90,10 @@ function slideCard(dir) {
 		// activate new card
 		new_card.children(".side1").addClass("active");
 	}
+	
+	//	Returns the scrollbar to the left to stop the cards from
+	//	desapearing from the screen after a lot of slides
+	$(document).scrollLeft(0);
 }
 
 // Toggle shuffle
