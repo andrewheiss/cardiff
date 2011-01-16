@@ -34,11 +34,15 @@ if (strpos($filename, dirname(__FILE__)) === 0 && file_exists($filename)) {
 	$yaml = new sfYamlParser();
 	$parsed_cards = $yaml->parse(file_get_contents($filename));
 	
-	$title = $parsed_cards['Title'];
+	$count = 0;
 	
-	$count = count($parsed_cards['Cards']);
-	
-	foreach ($parsed_cards['Cards'] as $side1 => $side2) {
+	foreach ($parsed_cards as $side1 => $side2) {
+		// Ignore any title variable. This'll have to do until I can make file_get_contents ignore the first line of the file so YAML can correctly parse the deck.
+		if ($count == 0 && ($side1 == "Title" || $side1 == "title")) {
+			$title = $side1;
+			continue;
+		}
+		
 		$side1 = SmartyPants(Markdown($side1));
 		$side2 = SmartyPants(Markdown($side2));
 		
@@ -46,6 +50,7 @@ if (strpos($filename, dirname(__FILE__)) === 0 && file_exists($filename)) {
 			$newCard = new Card($side1, $side2);
 
 			array_push($cards, $newCard);
+			$count++;
 		}
 	}
 }
