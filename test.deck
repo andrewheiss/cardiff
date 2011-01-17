@@ -1,6 +1,7 @@
 Title: Test YAML deck
   
 Card 1: '*Definition 1*'
+
 Card 2: '"Definition 2"'
 Card 3: |
   * This is a very long sentence
@@ -14,6 +15,7 @@ uno: 1
 اتنين: 2
 tres: 3
 cuatro: 4
+
 cinco: 5
 seis: 6
 siete: 7

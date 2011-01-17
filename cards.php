@@ -20,12 +20,13 @@ class Card {
 $cards = array();
 
 $slug = $_GET["slug"];			// slug for card deck			
+
 $mobile = (array_key_exists('m', $_GET)) ? $_GET['m']: ""; // mobile flag
 $shuffle = (array_key_exists('shuffle', $_GET)) ? $_GET['shuffle']: ""; // shuffle flag
 
 // Get the real file path for the card deck
 
-$filename = realpath(dirname(__FILE__) . '/' . $slug . '.yaml');
+$filename = realpath(dirname(__FILE__) . '/' . $slug . '.deck');
 
 // Make sure the card deck path is valid (i.e., no '../../' in the slug),
 // and ensure that the file exists.
