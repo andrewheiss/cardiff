@@ -22,6 +22,7 @@ header							{ height: 35px; background: #000; color: #fff; }
 .para .content					{ margin: 0px auto; font-size: 12px; }
 
 .content ul						{ text-align: left; }
+.content ol						{ text-align: left; }
 
 /* 3D stuff */
 

@@ -1,0 +1,23 @@
+Title: Cardiff Demo Deck
+ 
+Card 1a: _Italic definition_
+Card 1b: '*Italic definition*'
+Card 2: '"definition in quotes"'
+Card 3: |
+  * List
+  * of
+  * multiple
+  * meanings
+Process for doing something: |
+  1. First thing
+  2. Second thing
+  3. Third thing
+  4. Fourth thing
+casa: |
+  * house (Spanish)
+  * house (Italian)
+что (conj): that
+весь (pron): |
+  * all
+  * entire
+หมู่บ้าน: neighborhood
