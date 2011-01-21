@@ -42,7 +42,12 @@ The filename is the slug. For example, `latin-vocab-1.deck` becomes `http://your
 * Flip card: up/down arrow or `j` or `k`
 * Previous card: left arrow or `h`
 * Next card: right arrow or `l`
+* Toggle shuffling: `s`
 
 ### License
 
 Public domain.
+
+#### Other licenses
+
+Shuffle icon adapted from "media-shuffle" icon at defaulticon.com, and is licensed under a Creative Commons Attribution 3.0 license
