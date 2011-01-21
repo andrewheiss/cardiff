@@ -50,4 +50,4 @@ Public domain.
 
 #### Other licenses
 
-Shuffle icon adapted from "media-shuffle" icon at defaulticon.com, and is licensed under a Creative Commons Attribution 3.0 license
+Shuffle icon adapted from the "media-shuffle" icon at defaulticon.com, and is licensed under a Creative Commons Attribution 3.0 license
