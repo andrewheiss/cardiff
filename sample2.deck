@@ -1,5 +1,5 @@
 Title: Cardiff Demo Deck
- 
+
 Card 1a: _Italic definition_
 Card 1b: '*Italic definition*'
 Card 2: '"definition in quotes"'
@@ -21,3 +21,12 @@ casa: |
   * all
   * entire
 หมู่บ้าน: neighborhood
+To drink (Italian): |
+  Pronoun | Conjugation 
+  --- | --- 
+  Io | bevo 
+  Tu | bevi 
+  Lui/Lei | beve
+  Noi | beviamo
+  Voi | bevete
+  Loro | bevono

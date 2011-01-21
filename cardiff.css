@@ -23,6 +23,11 @@ header							{ height: 35px; background: #000; color: #fff; }
 
 .content ul, .content ol		{ text-align: left; display:-moz-inline-stack; display:inline-block; zoom:1; *display:inline; }
 
+.content table		{ border-collapse: collapse; border-spacing: 0; margin: 30px auto 0; }
+.content th, .content td 		{ border: 1px solid #222; padding: 5px; }
+.content tr:nth-child(2n+2) { background-color: rgba(0,0,0,.1); }
+.content th 			{ background-color: rgba(0,0,0,.3); }
+
 /* 3D stuff */
 
 .card .side1, .card .side2		{ -webkit-perspective: 500; -webkit-transform: rotateX(0deg); -webkit-transform-style: preserve-3d; }
