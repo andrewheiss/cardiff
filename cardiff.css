@@ -21,8 +21,7 @@ header							{ height: 35px; background: #000; color: #fff; }
 .content						{ display: table-cell; vertical-align: middle; line-height: 1.5em; }
 .para .content					{ margin: 0px auto; font-size: 12px; }
 
-.content ul						{ text-align: left; }
-.content ol						{ text-align: left; }
+.content ul, .content ol		{ text-align: left; display:-moz-inline-stack; display:inline-block; zoom:1; *display:inline; }
 
 /* 3D stuff */
 
